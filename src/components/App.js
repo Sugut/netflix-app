@@ -17,6 +17,16 @@ function App() {
  function handleChange(e){
   setSearch(e.target.value)
 }
+function handleSubmit(e){
+  e.preventDefault()
+
+  if(search){
+  fetch(searchApi + search)
+  .then(r=>  r.json())
+  .then(data=> setMovies(data.results))
+  }
+  setSearch("")
+}
   return (
     <div className="App">
       <Navbar />
