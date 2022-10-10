@@ -27,6 +27,12 @@ function handleSubmit(e){
   }
   setSearch("")
 }
+useEffect(()=>{
+  fetch("https://api.themoviedb.org/3/tv/popular?api_key=1bb8166c24cb38120e165753855c0acc")
+  .then(r=>r.json())
+  .then(data=> setShows(data.results))
+      console.log(data)
+ },[])
   return (
     <div className="App">
       <Navbar />
