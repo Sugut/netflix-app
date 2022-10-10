@@ -38,6 +38,11 @@ useEffect(()=>{
   .then(r=>r.json())
   .then(data=> setCasts(data.results))
 },[])
+useEffect(()=>{
+  fetch("https://api.themoviedb.org/3/trending/all/day?api_key=1bb8166c24cb38120e165753855c0acc")
+  .then(r=>r.json())
+  .then(data=> setTrends(data.results))
+},[])
   return (
     <div className="App">
       <Navbar />
