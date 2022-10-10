@@ -1,7 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import React,{useEffect, useState} from "react";
 import { Route, Routes} from "react-router-dom";
+import { Navbar } from "./Navbar";
+import { data } from 'autoprefixer';
+import Search from './Search';
+import MovieList from './MovieList';
+import TvShows from './TvShowList';
 
 function App() {
   const[movies, setMovies]=useState([])
