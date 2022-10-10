@@ -5,6 +5,7 @@ import { Route, Routes} from "react-router-dom";
 
 function App() {
   const[movies, setMovies]=useState([])
+  const [search, setSearch]= useState("")
 
   useEffect(()=>{
     fetch("https://api.themoviedb.org/3/movie/popular?api_key=1bb8166c24cb38120e165753855c0acc")
