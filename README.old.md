@@ -26,7 +26,7 @@ It gives the users various resources for example one can access the following:-
 9.Popularity number of their casts.
 
 
-API Reference
+## API Reference
 Get all popular movies
 GET (https://api.themoviedb.org/3/movie/popular?api_key={api-key})
 
@@ -55,21 +55,21 @@ Parameter          Type              Description
 
 api_key            string            API key included
 
-Contributing
+## Contributing
 Contributions are always welcome!
 
-See (contributing.md) for ways to get started.
+See (Contributing.md) for ways to get started.
 
 Please adhere to this project's code of conduct.
 
-🚀 About Me
+## 🚀 About Me
 Hi, I'm Sugut! 👋
 
 I'm a junior developer...
 
 here is my github link (https://github.com/Sugut)
 
-Installation
+## Installation
 Here's a brief intro about what a developer must do in order to start developing the project further:
 
 git clone (git@github.com:Sugut/netflix-app.git)
@@ -78,5 +78,5 @@ cd netflix-app/
 
 You will be using the [json-server][] package to mock the external APIs.[json-server]: https://github.com/typicode/json-server
 
-License
+## License
 See the License in (LICENSE.md) to get started
