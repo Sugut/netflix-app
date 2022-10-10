@@ -8,13 +8,15 @@ function App() {
   const [search, setSearch]= useState("")
 
   const searchApi="https://api.themoviedb.org/3/search/movie?api_key=1bb8166c24cb38120e165753855c0acc&query="
-  
+
   useEffect(()=>{
     fetch("https://api.themoviedb.org/3/movie/popular?api_key=1bb8166c24cb38120e165753855c0acc")
     .then(r=>  r.json())
     .then(data=> setMovies(data.results))
  },[])
-
+ function handleChange(e){
+  setSearch(e.target.value)
+}
   return (
     <div className="App">
       <Navbar />
