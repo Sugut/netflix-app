@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import React,{useEffect, useState} from "react";
+import { Route, Routes} from "react-router-dom";
 
 function App() {
+  const[movies, setMovies]=useState([])
+
+  useEffect(()=>{
+    fetch("https://api.themoviedb.org/3/movie/popular?api_key=1bb8166c24cb38120e165753855c0acc")
+    .then(r=>  r.json())
+    .then(data=> setMovies(data.results))
+ },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Search search={search} handleSubmit={handleSubmit} handleChange={handleChange} setSearch={setSearch}/>
+      <Routes>
+        <Route path="/" element={<Home/> } />
+        <Route path="/movies" element={<MovieList movies={movies} setMovies={setMovies}/> } />
+        <Route path="/tvshows" element={<TvShows shows={shows}/>} />
+        <Route path="/casts" element={<Cast casts={casts}/>} /> 
+        <Route path="/trending" element={<Trending trends={trends}/>}/>
+      </Routes>
     </div>
   );
 }
