@@ -6,6 +6,9 @@ import { data } from 'autoprefixer';
 import Search from './Search';
 import MovieList from './MovieList';
 import TvShows from './TvShowList';
+import Cast from "./Cast"
+import Home from "./Home"
+import Trending from './Trending';
 
 function App() {
   const[movies, setMovies]=useState([])
