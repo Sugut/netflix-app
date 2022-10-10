@@ -33,6 +33,11 @@ useEffect(()=>{
   .then(data=> setShows(data.results))
       console.log(data)
  },[])
+ useEffect(()=>{
+  fetch("https://api.themoviedb.org/3/person/popular?api_key=1bb8166c24cb38120e165753855c0acc")
+  .then(r=>r.json())
+  .then(data=> setCasts(data.results))
+},[])
   return (
     <div className="App">
       <Navbar />
