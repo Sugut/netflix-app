@@ -25,6 +25,7 @@ It gives the users various resources for example one can access the following:-
 
 9.Popularity number of their casts.
 
+10.More information by clicking the poster image
 
 ## API Reference
 Get all popular movies
