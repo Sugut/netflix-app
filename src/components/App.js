@@ -9,7 +9,9 @@ import TvShows from './TvShowList';
 import Cast from "./Cast"
 import Home from "./Home"
 import Trending from './Trending';
-
+import MovieSearch from './MovieSearch';
+import TvSearch from './TvSearch';
+import TrendSearch from './TrendSearch'
 
 function App() {
   const[movies, setMovies]=useState([])
@@ -62,6 +64,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/> } />
         <Route path="/movies" element={<MovieList movies={movies} setMovies={setMovies}/> } />
+        <Route path="/movies/:movieSearch" element={<MovieSearch movies={movies}/>}/>
+        <Route path="/tvShows/:tvSearch" element={<TvSearch shows={shows}/>}/>
+        <Route path="/trending/:trendSearch" element={<TrendSearch trends={trends} />}/>
         <Route path="/tvshows" element={<TvShows shows={shows}/>} />
         <Route path="/casts" element={<Cast casts={casts}/>} /> 
         <Route path="/trending" element={<Trending trends={trends}/>}/>

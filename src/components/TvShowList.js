@@ -1,14 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function TvShows({shows}){
     
     const imgUrl="https://image.tmdb.org/t/p/w500"
+    const tvNav= useNavigate()
       return(
         <div className="movies">
         {shows.map(show=>{
         return (
             <div className="movieList" key ={show.id}>
-                <img className="movieImage" src ={imgUrl+show.poster_path} alt="show" /> 
+                <img className="movieImage" src ={imgUrl+show.poster_path} alt="show" onClick={()=>{tvNav("./" + show.name)}}/> 
                 <div className="movie-info">
                     <h1>{show.name}</h1> 
                     <p>{show.first_air_date}</p>

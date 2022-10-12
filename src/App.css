@@ -92,3 +92,6 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
 }
+.movieImages img{
+  height: 350px;
+}

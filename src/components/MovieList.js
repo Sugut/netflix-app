@@ -1,16 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 
-function MovieList({movies, navigate}){
+function MovieList({movies}){
    const imgApi="https://image.tmdb.org/t/p/w500/"
-
+   const movieNav= useNavigate()
    
       return(
         <div className="movies">
         {movies.map(movie=>{
         return (
             <div className="movieList" key ={movie.id}>
-                <img className="moviesImage" src ={imgApi+movie.poster_path} alt="movie"/> 
+                <img className="moviesImage" src ={imgApi+movie.poster_path} alt="movie" onClick={()=>{movieNav("./" + movie.title)}}/> 
                 <div className="movie-info">
                     <h1>{movie.title}</h1> 
                     <p>{movie.release_date}</p>
