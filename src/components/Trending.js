@@ -12,7 +12,7 @@ function Trending({trends}) {
         {trends.map(trend=>{
         return (
             <div className="movieList" key ={trend.id}>
-                <img className="movieImage" src ={imgTrend+trend.poster_path} alt="trend" onClick={()=>{trendNav("./" + trend.title)}}/> 
+                <img className="movieImage" src ={imgTrend + trend.poster_path} alt="trend" onClick={()=>{trendNav("./" + trend.title)}}/> 
                 <div className="movie-info">
                     <h1>{trend.title}</h1> 
                     <p>{trend.release_date}</p>

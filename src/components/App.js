@@ -12,6 +12,8 @@ import Trending from './Trending';
 import MovieSearch from './MovieSearch';
 import TvSearch from './TvSearch';
 import TrendSearch from './TrendSearch'
+import Login from './Login';
+import Signup from './Signup';
 
 function App() {
   const[movies, setMovies]=useState([])
@@ -19,6 +21,7 @@ function App() {
   const [shows, setShows]= useState([])
   const [casts, setCasts]= useState([])
   const [trends, setTrends]=useState([])
+  const [user, setUser] = useState(null)
  
 
   const searchApi="https://api.themoviedb.org/3/search/movie?api_key=1bb8166c24cb38120e165753855c0acc&query="
@@ -70,6 +73,8 @@ function App() {
         <Route path="/tvshows" element={<TvShows shows={shows}/>} />
         <Route path="/casts" element={<Cast casts={casts}/>} /> 
         <Route path="/trending" element={<Trending trends={trends}/>}/>
+        <Route path='/login' element={<Login onLogin={setUser}/>} />
+         <Route path='/signup' element={<Signup onLogin={setUser}/>} />
       </Routes>
     </div>  
   );
