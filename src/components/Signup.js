@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import "./Signup.css"
 function Signup({onLogin}) {
   const [username, setUsername] = useState("");
@@ -64,7 +64,7 @@ function Signup({onLogin}) {
             />
           </div>
           <div className='signup-btn'>
-            <button> Get Started</button>
+            <button> <NavLink to ="/movies">Get Started</NavLink></button>
           </div>
           </div>
           </form>
